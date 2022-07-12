@@ -26,7 +26,7 @@ public class Solution{
      * @param keyword 用户输入的关键字
      * @return 返回查找到的失物
      */
-    public static List<Lost> selectByKeyword(Lost[] lostArray,String keyword){
+    public static Lost[] selectByKeyword(Lost[] lostArray,String keyword){
         List<Lost> list = new ArrayList<>();
         List<CardLost> cardList = new ArrayList<>();
         List<BookLost> bookList = new ArrayList<>();
@@ -57,7 +57,7 @@ public class Solution{
         }
 
         if (list.size() == 0) System.out.println("没有该项的匹配结果");
-        return list;
+        return list.toArray(new Lost[]{});
     }
 
     public static void main(String[] args) {
